@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>A Guessing Game!  </title>
+</head>
+
+
+<!-- Here is the main content of our page--> 
+<body onload="startup()">
+
+    <h1>A Guessing Game </h1>
+
+    <p>Enter your name 			<input type='text' id='name'>
+	<p>Enter a number 1 to 100  <input type='text' id='number'>   	<button onclick="run()">Make your Guess </button> 
+
+	<p id='message'>    
+
+	<br>
+
+        
+	<!-- Here begins our JavaSCript code !  --> 
+    <script>
+
+		var randomNumber = Math.floor(Math.random() * 100) + 1; 
+		// alert( randomNumber);
+	
+		function startup(){
+			
+		}
+		
+
+		function run(){
+
+			var name = document.getElementById("name");
+			var message = document.getElementById("message");
+			var number = document.getElementById("number");
+        
+			message.innerHTML = "Hello " + name.value + "! Your number is " + number.value;
+		
+			if (number.value == randomNumber) {
+				message.innerHTML = "You found the random number!";
+			}
+		
+        }
+        
+    </script>
+	
+</body> 
+</html>  
