@@ -16,7 +16,7 @@
 	<p>Enter a number 1 to 100  <input type='text' id='number'>   	<button onclick="run()">Make your Guess </button> 
 
 	<p id='message'>    
-
+    <embed src="success.wav" autostart="false" width="0" height="0" id="sound1" enablejavascript="true">
 	<br>
 
         
@@ -24,11 +24,12 @@
     <script>
 
 		var randomNumber = Math.floor(Math.random() * 100) + 1; 
-		// alert( randomNumber);
-	
+		alert( randomNumber);
+	    
 		function startup(){
 			
 		}
+		
 		
 
 		function run(){
@@ -41,6 +42,10 @@
 		
 			if (number.value == randomNumber) {
 				message.innerHTML = "You found the random number!";
+				
+				var audio = new Audio('success.wav');
+				audio.loop = false;
+				audio.play(); 
 			}
 		
         }
