@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: blue;
+  border-style: solid;
+}
+
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: lime;
+  border-style: solid;
+}
+
+
+
+</style>
+
+
+
+
+    
+<body>
+
+<P>
+    <button onclick="myMoveDown()">click me to move down.</button>
+    <br>
+     <button onclick="myMoveup()">click me to move up.</button>
+    <br>
+    <button onclick="myMovel()">click me to move left.</button>
+    <br>
+      <button onclick="myMover()">click me to move right.</button>
+    <br>
+    <button onclick=ChangeColor()>change color</button>
+</P>
+
+
+
+<div id ="myContainer">
+    <div id = "myAnimation">
+    </div>
+</div>
+
+<div id ="myContainer2">
+    <div id = "myAnimation2">
+    </div>
+</div>
+
+
+
+
+
+
+    
+</body>    
+
+<script>
+	var id = null;
+	var elem = document.getElementById("myAnimation");
+	
+	
+	function ChangeColor() {
+		elem.style.backgroundColor ="red";
+    }
+
+    
+      function myMoveDown() {
+      var pos = 0;
+      clearInterval(id);
+      id = setInterval(frame, 10);
+      function frame() {
+      if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+    
+      function myMoveup() {
+      var elem = document.getElementById("myAnimation");
+      var pos = 350;
+      clearInterval(id);
+      id = setInterval(frame, 10);
+      function frame() {
+      if (pos == 0) {
+      clearInterval(id);
+    } else {
+      pos = pos - 1;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+     
+      function myMovel() { 
+      var pos = 350;
+      clearInterval(id);
+      id = setInterval(frame, 10);
+      function frame() {
+      if (pos == 0) {
+      clearInterval(id);
+    } else {
+      pos = pos - 1;
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+
+      function myMover() {
+		
+      var pos = 0;
+      clearInterval(id);
+      id = setInterval(frame, 10);
+      function frame() {
+      if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos = pos + 1;
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+
+
+
+
+
+    
+</script>
+
+
+
+
+    
+</html>
